@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -19,12 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="triangle.h" />
+    <ClInclude Include="lab_5.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="2zadanie.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="triangle.c.cpp" />
+    <ClCompile Include="main_lab_5.cpp" />
+    <ClCompile Include="matrix_c.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
