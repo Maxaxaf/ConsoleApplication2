@@ -19,11 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="lab_5.h" />
+    <ClCompile Include="6labs.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main_lab_5.cpp" />
-    <ClCompile Include="matrix_c.cpp" />
+    <Text Include="input.txt" />
+    <Text Include="output.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
