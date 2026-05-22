@@ -11,9 +11,9 @@ struct human
 
 int main(void) {
 	setlocale(LC_ALL, "en_US.UTF-8");
-	struct human m_1[4] = { 0 };
-	struct human m_2[4] = { 0 };
 	int count;
+	struct human m_1[count] = { 0 };
+	struct human m_2[count] = { 0 };
 	printf("Number: \n");
 	if (scanf("%d", &count) != 1) {
 		printf("Ошибка, введите число!\n");

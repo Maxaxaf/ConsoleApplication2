@@ -4,7 +4,7 @@
 #include <string.h>
 #include <locale.h>
 
-int main() {
+int mainy() {
     setlocale(LC_ALL, "en_US.UTF-8");
     
     FILE* fin = fopen("input.txt", "r");

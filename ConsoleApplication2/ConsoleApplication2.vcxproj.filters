@@ -13,15 +13,32 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Исходные файлы\lab_6">
+      <UniqueIdentifier>{6873a972-763b-477c-86f5-96d27b2d4e29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\lab_5">
+      <UniqueIdentifier>{b113d950-82bc-4e74-8f8d-c78a6eb29fcd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\lab_8">
+      <UniqueIdentifier>{2b205931-fccf-4666-841f-e9abbe314c7d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
     <Text Include="output.txt" />
     <Text Include="file.txt" />
+    <Text Include="lab_8.txt">
+      <Filter>Исходные файлы\lab_8</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="dedlab_2.cpp">
-      <Filter>Исходные файлы</Filter>
+    <ClInclude Include="lab_5.h">
+      <Filter>Исходные файлы\lab_5</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="lab_8.cpp">
+      <Filter>Исходные файлы\lab_8</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

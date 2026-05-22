@@ -5,33 +5,27 @@
 #include <locale.h>
 // Создание матрицы
 double* create_matrix(int n) {
-    setlocale(LC_ALL, "en_US.UTF-8");
     double* matrix = (double*)malloc(n * n * sizeof(double));
     if (!matrix) {
-        printf("Ошибка выделения памяти!\n");
         exit(1);
     }
     return matrix;
 }
-
 // Ввод матрицы
 void input_matrix(double* matrix, int n, const char* name) {
-    setlocale(LC_ALL, "en_US.UTF-8");
     printf("\nВвод матрицы %s (%dx%d):\n", name, n, n);
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
 
             while (scanf("%lf", &matrix[i * n + j]) != 1) {
                 printf("ОШИБКА! Введите число: ");
-                while (getchar() != '\n'); 
+                while (getchar() != '\n');
             }
         }
     }
 }
-
 // Вывод матрицы
 void print_matrix(const double* matrix, int n, const char* name) {
-    setlocale(LC_ALL, "en_US.UTF-8");
     printf("\nВывод: %s\n", name);
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
@@ -67,7 +61,6 @@ double* matrix_calc(const double* a, const double* b, int n, char op) {
         }
     }
     else {
-        setlocale(LC_ALL, "en_US.UTF-8");
         printf("Ошибка: неверная операция '%c'!\n", op);
         free_matrix(res);
         return NULL;

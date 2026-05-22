@@ -19,12 +19,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <Text Include="1ch_lab_8.txt" />
     <Text Include="file.txt" />
     <Text Include="input.txt" />
+    <Text Include="lab_8.txt" />
     <Text Include="output.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="dedlab_2.cpp" />
+    <ClCompile Include="lab_8.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lab_5.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
