@@ -55,7 +55,6 @@ int main(void) {
 		printf("%s %s\n", massive[i].name, massive[i].surname);
 	}
 
-	// СОРТИРОВКА Пузырьком
 	struct Person temp;
 	for (int i = 0; i < count; i++) {
 		for (int j = 0; j < count - 1; j++) {
@@ -63,23 +62,23 @@ int main(void) {
 				int need_swap = 0;
 				int is_equal = 0;
 				switch (choise[k]) {
-				case 1: // Имя
+				case 1: 
 					if (strcmp(massive[j].name, massive[j + 1].name) > 0) need_swap = 1;
 					if (strcmp(massive[j].name, massive[j + 1].name) == 0) is_equal = 1;
 					break;
-				case 2: // Фамилия
+				case 2: 
 					if (strcmp(massive[j].surname, massive[j + 1].surname) > 0) need_swap = 1;
 					if (strcmp(massive[j].surname, massive[j + 1].surname) == 0) is_equal = 1;
 					break;
-				case 3: // Год рождения
+				case 3: 
 					if (massive[j].birth_year > massive[j + 1].birth_year) need_swap = 1;
 					if (massive[j].birth_year == massive[j + 1].birth_year) is_equal = 1;
 					break;
-				case 4: // Пол
+				case 4: 
 					if (strcmp(massive[j].gender, massive[j + 1].gender) > 0) need_swap = 1;
 					if (strcmp(massive[j].gender, massive[j + 1].gender) == 0) is_equal = 1;
 					break;
-				case 5: // Рост
+				case 5: 
 					if (massive[j].size > massive[j + 1].size) need_swap = 1;
 					if (massive[j].size == massive[j + 1].size) is_equal = 1;
 					break;
@@ -95,9 +94,9 @@ int main(void) {
 				if (!is_equal) {
 					break;
 				}
-			} // Конец цикла k
-		} // Конец цикла j (ДОБАВЛЕНО)
-	} // Конец цикла i (ДОБАВЛЕНО)
+			} 
+		} 
+	} 
 
 	printf("\nОтсортированный список:\n");
 	for (int i = 0; i < count; i++) {

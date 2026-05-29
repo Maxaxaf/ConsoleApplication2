@@ -22,6 +22,15 @@
     <Filter Include="Исходные файлы\lab_8">
       <UniqueIdentifier>{2b205931-fccf-4666-841f-e9abbe314c7d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\lab_dedushka">
+      <UniqueIdentifier>{91eb701d-fd50-41a6-82f7-14809a08558e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\lab_3_dedulia">
+      <UniqueIdentifier>{e887e146-f346-43dd-921c-a1ec2c7de3b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\lsb_9">
+      <UniqueIdentifier>{3e54af82-c7fd-43f9-a6bb-4a8524d44734}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
@@ -30,6 +39,7 @@
     <Text Include="lab_8.txt">
       <Filter>Исходные файлы\lab_8</Filter>
     </Text>
+    <Text Include="1ch_lab_8.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lab_5.h">
@@ -37,8 +47,8 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lab_8.cpp">
-      <Filter>Исходные файлы\lab_8</Filter>
+    <ClCompile Include="lab_9.2.cpp">
+      <Filter>Исходные файлы\lsb_9</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

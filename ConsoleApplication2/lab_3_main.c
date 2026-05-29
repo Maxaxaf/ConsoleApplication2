@@ -11,17 +11,14 @@
 #define MAX_FILES 256
 #define MAX_LINE_LEN 4096
 
-// Структура строго по ТЗ
 typedef struct word {
     int count;
     char* w;
 } WORD;
 
-// Статический массив указателей строго по ТЗ
 WORD* words[MAX_WORDS];
 int word_count = 0;
 
-// Функция валидации слова (должно начинаться с буквы и состоять из букв/цифр)
 int clean_and_validate(char* str) {
     if (!isalpha((unsigned char)str[0])) {
         return 0;
@@ -39,7 +36,6 @@ int clean_and_validate(char* str) {
     return (strlen(str) > 0);
 }
 
-// Добавление слова в массив (с использованием malloc и sizeof/strlen)
 void add_word(const char* str) {
     for (int i = 0; i < word_count; i++) {
         if (strcmp(words[i]->w, str) == 0) {
@@ -50,11 +46,9 @@ void add_word(const char* str) {
 
     if (word_count >= MAX_WORDS) return;
 
-    // Выделение памяти под структуру WORD
     words[word_count] = (WORD*)malloc(sizeof(WORD));
     if (!words[word_count]) return;
 
-    // Выделение памяти под строку (strlen + 1 для '\0')
     words[word_count]->w = (char*)malloc((strlen(str) + 1) * sizeof(char));
     if (!words[word_count]->w) {
         free(words[word_count]);
@@ -66,14 +60,12 @@ void add_word(const char* str) {
     word_count++;
 }
 
-// Компаратор для qsort: алфавитный порядок
 int compare_alphabet(const void* a, const void* b) {
     WORD* wordA = *(WORD**)a;
     WORD* wordB = *(WORD**)b;
     return strcmp(wordA->w, wordB->w);
 }
 
-// Компаратор для qsort: по убыванию частоты
 int compare_frequency(const void* a, const void* b) {
     WORD* wordA = *(WORD**)a;
     WORD* wordB = *(WORD**)b;
@@ -83,7 +75,6 @@ int compare_frequency(const void* a, const void* b) {
     return strcmp(wordA->w, wordB->w);
 }
 
-// Построчное чтение файла и разбивка через strtok
 void process_file(const char* filepath) {
     FILE* f = fopen(filepath, "r");
     if (!f) {
@@ -106,7 +97,6 @@ void process_file(const char* filepath) {
     fclose(f);
 }
 
-// Освобождение памяти
 void free_memory() {
     for (int i = 0; i < word_count; i++) {
         free(words[i]->w);
@@ -131,13 +121,12 @@ int main(int argc, char* argv[]) {
     int files_to_process = (argc - 1 > MAX_FILES) ? MAX_FILES : argc - 1;
 
     for (int i = 1; i <= files_to_process; i++) {
-        char path[512]; // Исправлено: теперь это строковый буфер
+        char path[512];
         sprintf(path, "texts/%s", argv[i]);
         printf("Обработка: %s...\n", path);
         process_file(path);
     }
 
-    // Запись 1: Алфавитный порядок
     qsort(words, word_count, sizeof(WORD*), compare_alphabet);
     FILE* out_alpha = fopen("result_alphabet.txt", "w");
     if (out_alpha) {
@@ -148,7 +137,6 @@ int main(int argc, char* argv[]) {
         printf("Создан файл: 'result_alphabet.txt'\n");
     }
 
-    // Запись 2: По убыванию частоты
     qsort(words, word_count, sizeof(WORD*), compare_frequency);
     FILE* out_freq = fopen("result_frequency.txt", "w");
     if (out_freq) {

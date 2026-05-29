@@ -26,10 +26,11 @@
     <Text Include="output.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lab_8.cpp" />
+    <ClInclude Include="lab_5.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="lab_5.h" />
+    <ClCompile Include="lab_9.2.cpp" />
+    <ClCompile Include="lsb_9.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>

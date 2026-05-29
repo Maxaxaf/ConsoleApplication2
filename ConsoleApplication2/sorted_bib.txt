@@ -1,0 +1,8 @@
+Author: Aho, Alfred V. and Sethi, Ravi and Ullman, Jeffrey D. | Title: Compilers: Principles, Techniques, and Tools | Publisher: Addison-Wesley | Year: 1986
+Author: Cormen, Thomas H. | Title: Algorithm Design | Publisher: MIT Press | Year: 2001
+Author: Cormen, Thomas H. and Leiserson, Charles E. | Title: Introduction to Algorithms | Publisher: MIT Press | Year: 2009
+Author: Dijkstra, Edsger W. | Title: Go To Statement Considered Harmful | Publisher: N/A | Year: 1968
+Author: Hoare, C. A. R. | Title: Quicksort | Publisher: N/A | Year: 1962
+Author: Kernighan, Brian W. and Ritchie, Dennis M. | Title: The C Programming Language | Publisher: Prentice Hall | Year: 1988
+Author: Knuth, Donald E. | Title: The Art of Computer Programming | Publisher: Addison-Wesley | Year: 1997
+Author: Stroustrup, Bjarne | Title: The C++ Programming Language | Publisher: Addison-Wesley | Year: 2013
