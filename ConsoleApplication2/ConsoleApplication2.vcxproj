@@ -29,8 +29,7 @@
     <ClInclude Include="lab_5.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lab_9.2.cpp" />
-    <ClCompile Include="lsb_9.cpp" />
+    <ClCompile Include="chernovik.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>

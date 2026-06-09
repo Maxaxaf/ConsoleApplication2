@@ -31,6 +31,9 @@
     <Filter Include="Исходные файлы\lsb_9">
       <UniqueIdentifier>{3e54af82-c7fd-43f9-a6bb-4a8524d44734}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\lab_10">
+      <UniqueIdentifier>{ca7521f7-9d0c-434c-b1a5-338c332409b7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
@@ -47,8 +50,8 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lab_9.2.cpp">
-      <Filter>Исходные файлы\lsb_9</Filter>
+    <ClCompile Include="chernovik.cpp">
+      <Filter>Исходные файлы\lab_dedushka</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
