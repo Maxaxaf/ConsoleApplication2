@@ -53,7 +53,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="prep_file.cpp">
+    <ClCompile Include="prep_file2.cpp">
       <Filter>Исходные файлы\prep_test</Filter>
     </ClCompile>
   </ItemGroup>

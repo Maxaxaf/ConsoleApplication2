@@ -16,13 +16,29 @@ int main(void) {
 	char month[10][100];
 	int month_num[10][10];
 	int sum = 0;
-
-
-	printf("Открытие фаила \n");
 	const char* filename = "data.txt";
-	FILE* fp = fopen(filename, "r");
+
+	printf("Запись фаила: \n");
+	int first; char second[20];
+	FILE* fp = fopen(filename, "w");
 	if (fp == NULL) {
-		printf("aОшибка, фаил не был найден.");
+		printf("Ошибка, фаил не найден.");
+		return 1;
+	}
+	for (int i=0;i<2;i++){
+		printf("Введите дату: \n");
+		scanf("%d", &first);
+
+		printf("Введите месяц: \n");
+		scanf("%s", second);
+
+		fprintf(fp, "%d %s\n", first, second);
+	}
+	fclose(fp);
+	printf("Открытие фаила \n");
+	fp = fopen(filename, "r");
+	if (fp == NULL) {
+		printf("Ошибка, фаил не был найден.");
 		return 1;
 	}
 	while (fgets(buffer, sizeof(buffer), fp) != NULL) {
@@ -91,4 +107,135 @@ int main(void) {
 		printf("FINAL RESULT: %d", result);
 	}
 	return 0;
+}
+
+double* create_matrix(int n) {
+	double* matrix = (double*)malloc(n * n * sizeof(double));
+	if (!matrix) {
+		exit(1);
+	}
+	return matrix;
+}
+
+double sum_matrix(double* a, int count) {
+	double summa = 0.0;
+	if (a == NULL) {
+		return summa;
+	}
+	for (int i = 0; i < count; i++) {
+		for (int j = 0; j < count; j++) {
+			summa += a[i * count + j];
+		}
+	}
+	return summa;
+}
+
+double** hide(double** own, double* matrix, int con, int index) {
+	own[index] = matrix;
+	static double* good[2];
+
+	for (int i = 0; i < index; i++) {
+		for (int j = i + 1; j <= index; j++) {
+			if (own[i] != NULL && own[j] != NULL) {
+
+				double sum_i = sum_matrix(own[i], con);
+				double sum_j = sum_matrix(own[j], con);
+			
+				if (sum_i == sum_j) {
+					good[0] = own[i];
+					good[1] = own[j];
+					return good;
+				}
+			}
+		}
+	}
+	return NULL;
+}
+
+int matrix(void) {
+	int count;
+
+	printf("Введите размер матриц n x n: \n");
+	scanf("%d", &count);
+
+	double* own_m[100] = { NULL }; int index = 0;
+
+	double** result = NULL;
+
+	while (result == NULL){
+		double* my_matrix = create_matrix(count);
+
+		printf("Введите элменеты матрицы.");
+		int k = 0;
+		for (int i = 0;i < count; i++) {
+			for (int j = 0;j < count; j++) {
+				k++;
+				printf("Введите элемент массива №%d:", k);
+				scanf("%lf", &my_matrix[i * count + j]);
+			}
+		}
+
+		result = hide(own_m, my_matrix, count, index);
+		index++;
+	}
+	printf("Найдены две матрицы с одинаковой суммой элементов.\n");
+
+	printf("Первая матрица:\n");
+	for (int i = 0; i < count; i++) {
+		for (int j = 0; j < count; j++) {
+			printf("%.1lf\t", result[0][i * count + j]);
+		}
+		printf("\n");
+	}
+
+	printf("\nВторая матрица:\n");
+	for (int i = 0; i < count; i++) {
+		for (int j = 0; j < count; j++) {
+			printf("%.1lf\t", result[1][i * count + j]);
+		}
+		printf("\n");
+	}
+
+	for (int i = 0; i < index; i++) {
+		free(own_m[i]);
+	}
+
+	return 0;
+}
+
+double* create_m(int count) {
+
+	double* matrix = (double*)malloc(sizeof(double) * count * count);
+	if (!matrix) {
+		exit(1);
+	}
+	return matrix;
+}
+int write_matrix(void) {
+	const char* filename = "input.txt";
+	FILE* fp = fopen(filename, "w");
+	if (fp == NULL) {
+		printf("Файл не открылся.");
+		return 1;
+	}
+	int count;
+	printf("Введите размер матрицы: n x n\n");
+	scanf("%d", count);
+
+	int two = 0; int k = 0;
+	while (two != 2) {
+		//double* matrix_1 = create_m(count); 
+		printf("Вывод матрицы под номером %d", k);
+		for (int i = 0; i < count; i++) {
+			for (int j = 0; j < count; j++) {
+				int number;
+				//scanf("%lf", &matrix_1[i * count + j]);
+				scanf("%d", &number);
+				fprintf(fp, "%d ", number);
+			}
+		}	fprintf(fp, "\n");
+		two++;
+		k++;
+		//free(matrix_1);
+	}
 }

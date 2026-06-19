@@ -29,7 +29,7 @@
     <ClInclude Include="lab_5.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="prep_file.cpp" />
+    <ClCompile Include="prep_file2.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
